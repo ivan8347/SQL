@@ -1,18 +1,18 @@
--- SQLQuery0-CREATE DATABASE.sql
+--SQLQuery0-CREATE DATABASE.sql
 CREATE DATABASE SPU_411_DDL
-ON 
+ON
 (
-  NAME        =  SPU_411_DDL,
-  FILENAME    =  'D:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\SPU_411_DDL.mdf',
-  SIZE        =  8 MB,
-  MAXSIZE     =  500 MB,
-  FILEGROWTH  =  8 MB
+NAME       = SPU_411_DDL,
+FILENAME   = 'D:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\SPU_411_DDL.mdf',
+SIZE       = 8 MB,
+MAXSIZE    = 500 MB,
+FILEGROWTH = 8 MB
 )
-LOG ON
+LOG ON 
 (
-  NAME        =  SPU_411_Log,
-  FILENAME    =  'D:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\SPU_411_DDL.ldf',
-  SIZE        =  8 MB,
-  MAXSIZE     =  500 MB,
-  FILEGROWTH  =  5 MB
-) 
+NAME       = SPU_411_Log,
+FILENAME   = 'D:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\SPU_411_DDL.ldf',
+SIZE       = 8 MB,
+MAXSIZE    = 500 MB,
+FILEGROWTH = 5 MB
+)
