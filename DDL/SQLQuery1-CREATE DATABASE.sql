@@ -1,1 +1,1 @@
-- - SQLQuery1-CREATE DATABASE.sql
+--SQLQuery1-CREATE DATABASE.sql
