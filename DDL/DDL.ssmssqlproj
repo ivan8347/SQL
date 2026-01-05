@@ -39,6 +39,18 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery1 - CREATE Students Branch.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery1 - CREATE Teachers.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1 - CREATE Teachers.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 - CREATE Disciplines.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 - CREATE Disciplines.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
