@@ -1,10 +1,11 @@
---SQLQuery - All._in_One.sql
+--SQLQuery - All_in_One.sql
 USE SPU_411_ALL;
  CREATE TABLE Directions
  (
  direction_id    TINYINT		        PRIMARY KEY,
  direction_name  NVARCHAR(150)          NOT NULL
- )
+ );
+
 CREATE TABLE Groups
 (
 group_id         INT			        PRIMARY KEY,
@@ -12,6 +13,7 @@ group_name       NVARCHAR(24)	        NOT NULL,
 direction        TINYINT		        NOT NULL
 CONSTRAINT       FK_Groups_Directions   FOREIGN KEY REFERENCES Directions(direction_id)
 );
+
 CREATE TABLE Students 
 (
 student_id       INT					PRIMARY KEY,
@@ -22,20 +24,22 @@ birth_date       DATE				    NOT NULL,
 [group]          INT					NOT NULL
 CONSTRAINT       FK_Students_Groups     FOREIGN KEY REFERENCES Groups(group_id)
  );
+
  CREATE TABLE Teachers
 (
-teacher_id  INT           PRIMARY KEY,
-last_name   NVARCHAR(50)  NOT NULL,
-first_name  NVARCHAR(50)  NOT NULL,
-midl_name   NVARCHAR(50), 
-birth_date  DATE		  NOT NULL,
-rate		MONEY         NOT NULL
+teacher_id       INT                    PRIMARY KEY,
+last_name        NVARCHAR(50)           NOT NULL,
+first_name       NVARCHAR(50)           NOT NULL,
+midl_name        NVARCHAR(50),          
+birth_date       DATE		            NOT NULL,
+rate		     MONEY                  NOT NULL
 );
+
 CREATE TABLE Disciplines
 (
-discipline_id SMALLINT  PRIMARY KEY,
-discipline_name NVARCHAR(256) NOT NULL,
-number_of_lessons TINYINT NOT NULL
+discipline_id     SMALLINT              PRIMARY KEY,
+discipline_name   NVARCHAR(256)         NOT NULL,
+number_of_lessons TINYINT               NOT NULL
 );
 
 CREATE TABLE TeachersDisciplinesRelation
