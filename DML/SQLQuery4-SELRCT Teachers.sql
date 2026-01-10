@@ -1,0 +1,15 @@
+--SQLQuery4-SELRCT Teachers.sql
+USE  SPU_411_Import;
+SELECT
+       [Преподаватель]  =  FORMATMESSAGE(N'%s %s %s', last_name,first_name,middle_name),
+       [Дисциплина]     =  discipline_name
+
+FROM  Teachers,Disciplines,TeachersDisciplinesRelation
+WHERE teacher = teacher_id
+AND discipline = discipline_id
+--AND last_name = N'Покидюк'
+--AND middle_name IS NULL;
+--AND   discipline_name LIKE N'Системное%'
+
+;
+--SELECT * FROM TeachersDisciplinesRelation;
