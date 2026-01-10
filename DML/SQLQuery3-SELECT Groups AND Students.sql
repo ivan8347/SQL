@@ -2,21 +2,17 @@
 USE SPU_411_Import;
 
 SELECT
-		  direction_name			        AS	N'Направление обучения',
-		  --COUNT(group_name)		        AS	N'Количество групп',
-		  COUNT(DISTINCT group_name)		AS	N'Количество групп',
-		  --COUNT(stud_id)			        AS  N'Количество студентов'
-		  COUNT(DISTINCT stud_id)			AS  N'Количество студентов'
-FROM      Students,Groups,Directions
-WHERE     direction = direction_id
-AND		  [group] = group_id 
---AND [group] IS NULL
+		  d.direction_name			        AS	N'Направление обучения',
+		  COUNT(DISTINCT g.group_id)		AS	N'Количество групп',   --COUNT(group_name)	AS	N'Количество групп',
+			COUNT(DISTINCT g.gpoup_name) AS N'Назыание группы',
+		  (SELECT COUNT (*) 
+		  FROM Students s
+		  WHERE s.[group] = g.group_id
+		  )
+		  AS  N'Количество студентов' --COUNT(stud_id) AS  N'Количество студентов' COUNT(DISTINCT stud_id)	
 
---AND COUNT(group_name) < 5
-GROUP BY  direction_name
---HAVING  COUNT(group_name) < 5
-ORDER BY N'Количество групп' ASC --COUNT(group_name)
-
-
-
-;
+FROM     Directions d ,  Groups g   --Students,
+WHERE     g.direction = d.direction_id
+GROUP BY  d.direction_name,g.group_id,g.group_name
+--ORDER BY COUNT(DISTINCT g.group_id) ASC; --COUNT(group_name)
+ORDER BY d.direction_name, g.group_name;
