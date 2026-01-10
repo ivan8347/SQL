@@ -12,4 +12,4 @@ AND discipline = discipline_id
 --AND   discipline_name LIKE N'Системное%'
 
 ;
---SELECT * FROM TeachersDisciplinesRelation;
+SELECT * FROM TeachersDisciplinesRelation;
