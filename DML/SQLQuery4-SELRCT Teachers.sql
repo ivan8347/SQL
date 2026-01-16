@@ -7,9 +7,9 @@ SELECT
 FROM  Teachers,Disciplines,TeachersDisciplinesRelation
 WHERE teacher = teacher_id
 AND discipline = discipline_id
---AND last_name = N'Покидюк'
---AND middle_name IS NULL;
+AND last_name = N'Покидюк'
+--AND middle_name ;
 --AND   discipline_name LIKE N'Системное%'
 
 ;
---SELECT * FROM TeachersDisciplinesRelation;
+SELECT * FROM TeachersDisciplinesRelation;

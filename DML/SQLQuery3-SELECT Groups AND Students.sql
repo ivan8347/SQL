@@ -14,7 +14,7 @@ AND		  [group] = group_id
 
 --AND COUNT(group_name) < 5
 GROUP BY  direction_name
---HAVING  COUNT(group_name) < 5
+HAVING  COUNT(group_name) < 5
 ORDER BY N'Количество групп' ASC --COUNT(group_name)
 
 
