@@ -7,27 +7,30 @@ USE SPU_411_Import;
 
 
 --SELECT
---    d.discipline_name AS N'Дисциплина',
---    COUNT(DISTINCT t.teacher_id) AS N'Количество преподавателей'
---FROM Disciplines d --Teachers t
---LEFT JOIN TeachersDisciplinesRelation r ON r.discipline = discipline_id
---LEFT JOIN Teachers t ON t.teacher_id = r.teacher 
---GROUP BY 
---    d.discipline_name
---ORDER BY d.discipline_name ASC;
-
---SELECT
---		FORMATMESSAGE(N'%s %s %s', last_name,first_name,middle_name) AS N'Преподователь',
---		COUNT(DISTINCT d.discipline_id) AS N'Количество дисциплин'
---FROM Teachers t
---JOIN TeachersDisciplinesRelation r ON  r.teacher = teacher_id
---JOIN Disciplines d ON d.discipline_id = r.discipline
---GROUP BY t.last_name, t.first_name, t.middle_name 
---ORDER BY t.last_name  ASC;
+--    discipline_name AS N'Дисциплина',
+--    COUNT(DISTINCT teacher_id) AS N'Количество преподавателей'
+--FROM Disciplines 
+--LEFT JOIN TeachersDisciplinesRelation  ON discipline = discipline_id
+--LEFT JOIN Teachers  ON teacher_id = teacher 
+--GROUP  BY discipline_name
+--ORDER BY discipline_name ASC;
 
 SELECT
-	FORMATMESSAGE(N'%s %s %s', last_name,first_name,middle_name) AS N'Преподователь'
-FROM Teachers,Disciplines
-WHERE 
+		FORMATMESSAGE(N'%s %s %s', last_name,first_name,middle_name) AS N'Преподователь',
+		COUNT(DISTINCT discipline_id) AS N'Количество дисциплин'
+FROM Teachers 
+JOIN TeachersDisciplinesRelation  ON  teacher = teacher_id
+JOIN Disciplines  ON discipline_id = discipline
+GROUP BY last_name, first_name, middle_name 
+ORDER BY last_name  ASC;
+
+SELECT
+    FORMATMESSAGE(N'%s %s %s', last_name, first_name, middle_name) AS N'Преподаватель'
+FROM Teachers 
+LEFT JOIN TeachersDisciplinesRelation  ON teacher = teacher_id
+WHERE discipline IS NULL
+ORDER BY last_name, first_name;
+
+
 
 
