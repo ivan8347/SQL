@@ -33,6 +33,12 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery1- INSERT Groups.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery1.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery2- SELECT Students.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
