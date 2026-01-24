@@ -4,6 +4,7 @@ USE SPU_411_Import;
 
 --INSERT Groups(group_id,group_name,direction)
 --VALUES (411,N'SPU_411',1);
+SET DATEFIRST 1;
 
 DECLARE @group				AS	INT			=	 (SELECT group_id			FROM Groups			WHERE group_name = N'SPU_411');
 DECLARE @discipline			AS	SMALLINT	=	 (SELECT discipline_id		FROM Disciplines	WHERE discipline_name LIKE(N'Процедурное%C++'));
@@ -18,6 +19,8 @@ DECLARE @time				AS	TIME ;
 --DELETE FROM Schedule
 --WHERE [group] = @group AND discipline = @discipline;
 
+WHILE (@lesson_number <= @number_of_lessons)
+BEGIN 
 
 PRINT (@group)
 PRINT (@discipline)
@@ -26,10 +29,9 @@ PRINT (@teacher)
 PRINT (@date)
 PRINT (@start_time)
 
-WHILE (@lesson_number <= @number_of_lessons)
-BEGIN 
 		PRINT ('----------------------------');
 		PRINT (@date);
+		PRINT (DATENAME(WEEKDAY,@date));
 
 	    SET @time = @start_time;
 	    IF NOT EXISTS (SELECT [group] FROM Schedule Where[date] = @date AND [time] = @time)
@@ -63,6 +65,7 @@ BEGIN
 SELECT
 		[Группа]			 =		group_name,
 		[Дата]				 =		[date],
+		[День]				 =		DATENAME(WEEKDAY,[date]),
 		[Время]				 =		[time],
 		[Дисциплина]		 =		discipline_name,
 		[Преподователь]		 =		FORMATMESSAGE(N'%s %s %s',last_name,first_name,middle_name),
