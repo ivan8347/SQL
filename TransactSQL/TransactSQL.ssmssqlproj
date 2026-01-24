@@ -21,6 +21,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="SQLQuery0-CHECK Procedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery0-CHECK Procedure.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery1 - Select Schedules.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
@@ -32,6 +38,24 @@
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery1-Insert Schedules.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2 - INSERT Schedule semistacionar.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2 - INSERT Schedule semistacionar.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2-SELECT Schedule Create Procedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2-SELECT Schedule Create Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery2-Select Schedule For Group Create Procedure.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery2-Select Schedule For Group Create Procedure.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

@@ -20,3 +20,24 @@ WHERE     direction = direction_id
 GROUP BY  direction_name,direction_id,group_id,group_name
 ORDER BY direction_name, group_name;
 --ORDER BY COUNT(DISTINCT group_id) DESC;
+
+
+WITH GroupStudent AS (
+   SELECT 
+        group_id,
+        group_name,
+        direction,
+        COUNT(stud_id) AS student_count
+    FROM Groups 
+    LEFT JOIN Students  ON [group] = group_id
+    GROUP BY group_id, group_name, direction
+)
+
+SELECT 
+    direction_name                      AS       N'Направление обучения',
+    COUNT(*)                            AS       N'Количество групп',
+    GroupStudent.student_count     AS       N'Количество студентов '
+FROM GroupStudent 
+JOIN Directions ON direction_id = direction
+GROUP BY direction_name, student_count
+ORDER BY direction_name, student_count;
