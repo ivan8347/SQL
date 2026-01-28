@@ -17,13 +17,22 @@ BEGIN
 	[День] = DATENAME(WEEKDAY,[date]),
 	[Дата] = [date],
 	[Время] =[time],
-	[Стфтус] = IIF(spent = 1,N'Проведено',N'Запланировано')
+	[Статус] = IIF(spent = 1,N'Проведено',N'Запланировано')
 
 	FROM Schedule,Groups,Disciplines,Teachers
 	WHERE [group] = group_id
 	AND discipline = discipline_id
 	AND teacher = teacher_id
 	AND group_name = @group_name
-	AND discipline_name LIKE IIF(@discipline_name = N'',N'%',@discipline_name)
-	;
+	AND discipline_name LIKE 
+    CASE 
+        WHEN @discipline_name = N'' THEN N'%'
+        WHEN @discipline_name LIKE '%[%]%' THEN @discipline_name
+        ELSE '%' + @discipline_name + '%'
+    END
+
+
+	--AND discipline_name LIKE IIF(@discipline_name = N'',N'%',@discipline_name)
+	
+	ORDER BY [date] ASC;
 END
