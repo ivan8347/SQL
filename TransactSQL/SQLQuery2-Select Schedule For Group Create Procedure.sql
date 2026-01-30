@@ -16,10 +16,10 @@ BEGIN
 			[Статус]			 =		IIF(spent = 1,N'Проведено', N'Запланировано')
 
 	FROM	Schedule
-	JOIN	Groups				 ON		[group]			=	group_id
-	JOIN	Disciplines			 ON		discipline		=	discipline_id
-	JOIN	Teachers			 ON		teacher			=	teacher_id
-	WHERE	group_name			 =		@group_name
-	AND		discipline_name		 LIKE	@discipline
+	JOIN	Groups						ON		[group]			=	group_id
+	JOIN	Disciplines					ON		discipline		=	discipline_id
+	JOIN	Teachers					ON		teacher			=	teacher_id
+	WHERE	group_id			 =		(SELECT group_id	  FROM Groups		WHERE	group_name = @group_name)
+	AND		discipline_id		 =		(SELECT discipline_id FROM Disciplines	WHERE	discipline_name LIKE @discipline)
 
 END

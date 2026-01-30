@@ -60,7 +60,7 @@ PRINT (@start_time)
 		 SET @date = DATEADD (DAY, 7, @date);
  END;
 
-
+ --DELETE FROM Schedule;
 
 SELECT
 		[Группа]			 =		group_name,
@@ -78,3 +78,4 @@ WHERE	group_name			 =		N'SPU_411'
 ;
 
 --SELECT COUNT([group])FROM Schedule JOIN Groups ON [group]  = group_id WHERE group_name = N'SPU_411';
+--DELETE FROM Schedule;
