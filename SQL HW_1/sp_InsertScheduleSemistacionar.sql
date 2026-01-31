@@ -10,6 +10,8 @@ ALTER PROCEDURE sp_InsertScheduleSemistacionar
 	@start_time				TIME
 	AS
 BEGIN
+SET LANGUAGE Russian;
+
 	SET DATEFIRST 1;
 
 DECLARE @group				AS	INT			=	 (SELECT group_id			FROM Groups			WHERE group_name = @group_name);
