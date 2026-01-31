@@ -76,7 +76,7 @@ BEGIN
 
     SET @lesson_number += 1;
     IF @lesson_number > @number_of_lessons BREAK;
-
+	
     -- Пара 2 — 11:35
     SET @time = '11:35';
 
