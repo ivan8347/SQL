@@ -27,6 +27,12 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery0-CHECK Procedure.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery1 - InsertScheduleSemistacionar.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery1 - InsertScheduleSemistacionar.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery1 - Select Schedules.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
@@ -56,6 +62,12 @@
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery2-Select Schedule For Group Create Procedure.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery3 -INSERT Lesson.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery3 -INSERT Lesson.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

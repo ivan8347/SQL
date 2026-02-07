@@ -3,14 +3,17 @@ USE SPU_411_Import;
 GO
 ALTER PROCEDURE sp_SelectSchedule
 
-			@group_name			AS		NVARCHAR(24),
-			@discipline			AS		NVARCHAR(150)
+			@group_name					AS		NVARCHAR(24),
+			@discipline_name			AS		NVARCHAR(150)
 AS
 BEGIN
+	DECLARE @group_id					AS		INT = (SELECT group_id FROM Groups WHERE group_name = @group_name);
+	DECLARE @discipline_id				AS		SMALLINT = (SELECT discipline_id FROM Disciplines WHERE discipline_name LIKE @discipline_name);
 	SELECT 
 			[Группа]			 =		group_name,
 			[Дата]				 =		[date],
 			[Время]				 =		[time],
+			[День недели]		 = 		(SELECT LEFT(DATENAME(WEEKDAY, [date]), 3)),
 			[Дисциплина]		 =		discipline_name,
 			[Преподователь]		 =		FORMATMESSAGE(N'%s %s %s',last_name,first_name,middle_name),
 			[Статус]			 =		IIF(spent = 1,N'Проведено', N'Запланировано')
@@ -19,7 +22,7 @@ BEGIN
 	JOIN	Groups				 ON		[group]			=	group_id
 	JOIN	Disciplines			 ON		discipline		=	discipline_id
 	JOIN	Teachers			 ON		teacher			=	teacher_id
-	WHERE	group_name			 =		@group_name
-	AND		discipline_name		 LIKE	@discipline
+	WHERE		 group_id			 =		 @group_id
+	AND		discipline_id		 =	@discipline_id
 
 END
