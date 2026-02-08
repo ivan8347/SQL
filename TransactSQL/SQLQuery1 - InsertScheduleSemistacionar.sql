@@ -4,7 +4,8 @@ GO
 
 ALTER PROCEDURE sp_InsertScheduleSemistacionar
 	@group_name			AS	NVARCHAR(24),
-	@discipline_name	AS	NVARCHAR(150),
+	--@discipline_name	AS	NVARCHAR(150),
+	@discipline_id		AS	SMALLINT,
 	@teacher			AS	NVARCHAR(50)
 	
 
@@ -13,8 +14,16 @@ ALTER PROCEDURE sp_InsertScheduleSemistacionar
 AS
 BEGIN
 		DECLARE @group_id			AS	INT			=	 (SELECT group_id			FROM Groups			WHERE group_name = @group_name);
-		DECLARE @discipline_id		AS	SMALLINT	=	 (SELECT discipline_id		FROM Disciplines	WHERE discipline_name LIKE @discipline_name);
+		DECLARE @discipline			SMALLINT		=	@discipline_id;
+		--DECLARE @discipline_id		AS	SMALLINT	=	 (SELECT discipline_id		FROM Disciplines	WHERE discipline_name LIKE @discipline_name);
 		DECLARE @teacher_id			AS	SMALLINT	=	 (SELECT teacher_id			FROM Teachers		WHERE last_name LIKE @teacher);
+
+		IF EXISTS ( SELECT 1 FROM Schedule WHERE [group] = @group_id AND discipline = @discipline_id )
+		BEGIN 
+		--RAISERROR(N'Эта дисциплина уже есть в расписании группы и не может быть добавлена повторно.', 16, 1); 
+		RETURN; END
+
+
 
 		--DECLARE @start_date			AS	DATE		=	 dbo.GetNextDate(@group_name);
 		DECLARE @date				AS	DATE		=	 dbo.GetLastDate(@group_name);
