@@ -21,6 +21,12 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
+        <FileNode Name="SQLQuery0 - TestHolidays.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery0 - TestHolidays.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery0-CHECK Procedure.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
@@ -69,11 +75,23 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery3 -INSERT Lesson.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery7 - AddAllHolidaysFor.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7 - AddAllHolidaysFor.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery7 - CREATE Procedure NewYear.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>SQLQuery7 - CREATE Procedure NewYear.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery7 -CREATE Procedure Add Holydays.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7 -CREATE Procedure Add Holydays.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

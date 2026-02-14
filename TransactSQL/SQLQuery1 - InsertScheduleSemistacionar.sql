@@ -7,9 +7,6 @@ ALTER PROCEDURE sp_InsertScheduleSemistacionar
 	--@discipline_name	AS	NVARCHAR(150),
 	@discipline_id		AS	SMALLINT,
 	@teacher			AS	NVARCHAR(50)
-	
-
-
 
 AS
 BEGIN
@@ -18,10 +15,9 @@ BEGIN
 		--DECLARE @discipline_id		AS	SMALLINT	=	 (SELECT discipline_id		FROM Disciplines	WHERE discipline_name LIKE @discipline_name);
 		DECLARE @teacher_id			AS	SMALLINT	=	 (SELECT teacher_id			FROM Teachers		WHERE last_name LIKE @teacher);
 
+
 		IF EXISTS ( SELECT 1 FROM Schedule WHERE [group] = @group_id AND discipline = @discipline_id )
-		BEGIN 
-		--RAISERROR(N'Эта дисциплина уже есть в расписании группы и не может быть добавлена повторно.', 16, 1); 
-		RETURN; END
+		RETURN; 
 
 
 
