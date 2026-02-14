@@ -19,9 +19,8 @@ BEGIN
 		DECLARE @teacher_id			AS	SMALLINT	=	 (SELECT teacher_id			FROM Teachers		WHERE last_name LIKE @teacher);
 
 		IF EXISTS ( SELECT 1 FROM Schedule WHERE [group] = @group_id AND discipline = @discipline_id )
-		BEGIN 
-		--RAISERROR(N'Эта дисциплина уже есть в расписании группы и не может быть добавлена повторно.', 16, 1); 
-		RETURN; END
+	
+		RETURN; 
 
 
 
