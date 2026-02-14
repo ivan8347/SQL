@@ -69,6 +69,24 @@
           <AssociatedConnUserName />
           <FullPath>SQLQuery3 -INSERT Lesson.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery7 - .sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7 - .sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery7 - AddHolidays.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7 - AddHolidays.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery7 - AddHolidaysAll.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7 - AddHolidaysAll.sql</FullPath>
+        </FileNode>
         <FileNode Name="SQLQuery7 - CREATE Procedure NewYear.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:KIT1\SQLEXPRESS:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>KIT1\SQLEXPRESS</AssociatedConnSrvName>

@@ -4,34 +4,28 @@ GO
 
 ALTER PROCEDURE sp_InsertScheduleSemistacionar
 	@group_name			AS	NVARCHAR(24),
-	--@discipline_name	AS	NVARCHAR(150),
-	@discipline_id		AS	SMALLINT,
+	@discipline_name	AS	NVARCHAR(150),
+	--@discipline_id		AS	SMALLINT,
 	@teacher			AS	NVARCHAR(50)
-	
-
-
 
 AS
 BEGIN
 		DECLARE @group_id			AS	INT			=	 (SELECT group_id			FROM Groups			WHERE group_name = @group_name);
-		DECLARE @discipline			SMALLINT		=	@discipline_id;
-		--DECLARE @discipline_id		AS	SMALLINT	=	 (SELECT discipline_id		FROM Disciplines	WHERE discipline_name LIKE @discipline_name);
+		--DECLARE @discipline			SMALLINT		=	@discipline_id;
+		DECLARE @discipline_id		AS	SMALLINT	=	 (SELECT discipline_id		FROM Disciplines	WHERE discipline_name LIKE @discipline_name);
+		DECLARE @number_of_lessons	AS	TINYINT		=	 (SELECT number_of_lessons	FROM Disciplines	WHERE discipline_id = @discipline_id);
+		DECLARE @lesson_number		AS	INT			=	 (SELECT COUNT(discipline) FROM Schedule WHERE [group] = @group_id AND discipline = @discipline_id);
+
 		DECLARE @teacher_id			AS	SMALLINT	=	 (SELECT teacher_id			FROM Teachers		WHERE last_name LIKE @teacher);
 
-		IF EXISTS ( SELECT 1 FROM Schedule WHERE [group] = @group_id AND discipline = @discipline_id )
-	
-		RETURN; 
-
-
+		--IF EXISTS ( SELECT 1 FROM Schedule WHERE [group] = @group_id AND discipline = @discipline_id )
+		--RETURN; 
 
 		--DECLARE @start_date			AS	DATE		=	 dbo.GetNextDate(@group_name);
 		DECLARE @date				AS	DATE		=	 dbo.GetLastDate(@group_name);
-
 		DECLARE @start_time			AS	TIME		=	 (SELECT start_time FROM Groups WHERE group_id = @group_id);
-		DECLARE @time				AS TIME = @start_time;
-		DECLARE @number_of_lessons	AS	TINYINT		=	 (SELECT number_of_lessons	FROM Disciplines	WHERE discipline_id = @discipline_id);
-		IF @date   IS NULL				SET @date = (SELECT start_date FROM Groups WHERE group_id = @group_id);
-		DECLARE @lesson_number		AS	INT			=	 1;
+		DECLARE @time				AS	TIME		= @start_time;
+		IF @date   IS NULL				SET @date	= (SELECT start_date FROM Groups WHERE group_id = @group_id);
 
 		PRINT '-------------------------------------';
 		PRINT @group_id;
